@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.devsuperior.dsquiz.dto.SaleDTO;
+import com.devsuperior.dsquiz.dto.SaleSumDTO;
 import com.devsuperior.dsquiz.services.SaleService;
 
 @RestController
@@ -21,5 +22,10 @@ public class SaleResource {
 	@GetMapping
 	public ResponseEntity<List<SaleDTO>> findAll() {
 		return ResponseEntity.ok().body(service.findAll());
+	}
+	
+	@GetMapping("/sum-by-seller")
+	public ResponseEntity<List<SaleSumDTO>> amountGroupedBySeller() {
+		return ResponseEntity.ok().body(service.amountGroupedBySeller());
 	}
 }
