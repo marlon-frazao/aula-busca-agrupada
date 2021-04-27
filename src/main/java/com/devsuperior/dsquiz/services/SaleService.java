@@ -28,6 +28,7 @@ public class SaleService {
 	
 	@Transactional(readOnly = true)
 	public List<SaleSumDTO> amountGroupedBySeller() {
+                //Gambiarra. Deve ser revisto
 		sellerRepository.findAll();
 		return repository.amountGroupedBySeller();
 	}
